@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>order-card</title>
-        <link rel="stylesheet" href="order_card.css">
-        <link rel="stylesheet" href="order_card_demo.css">
-        <script src="order_card.js"></script>
-    </head>
+ <head>
+  <title>order-card</title>
+  <link rel="stylesheet" href="order_card.css">
+  <link rel="stylesheet" href="order_card_demo.css">
+  <script src="order_card.js"></script>
+ </head>
 
-    <body>
-        <?php include "$_SERVER[DOCUMENT_ROOT]/ddnd/component_prototypes/order_card_generator.php"; ?>
+ <body>
+  <?php include "$_SERVER[DOCUMENT_ROOT]/ddnd/component_prototypes/order_card_generator.php"; ?>
 
-        <script>
-            (
-                function() {
-                    const transition = document.getElementsByClassName("order-card")[0].style.transition;
-                    for (let order_card of document.getElementsByClassName("order-card-status")) {
-                        order_card.style.transition = transition;
-                    }
-                }
-            )()
-        </script>
-    </body>
+  <script>
+   (
+    function() {
+     const transition = document.getElementsByClassName("order-card")[0].style.transition;
+     for (let order_card of document.getElementsByClassName("order-card-status")) {
+      order_card.style.transition = transition;
+     }
+    }
+   )()
+  </script>
+ </body>
 </html>

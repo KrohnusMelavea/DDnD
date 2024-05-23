@@ -7,7 +7,8 @@
   "product_title" => "D&D Dice Set",
   "product_price" => 10000,
   "product_quantity" => 3,
-  "product_status" => 0
+  "product_status" => 0,
+  "product_delivery_date" => date_create_from_format("dd-mm-yyyy hh:mm:ss", "01/01/2000 12:00:00")
  );
 }
 
