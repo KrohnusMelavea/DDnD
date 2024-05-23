@@ -1,0 +1,178 @@
+:root {
+    --order-card-text-color: #000000;
+    --order-card-hover-transition: 0.2s;
+    --order-card-hover-scale: 1.25;
+    --order-card-border-radius: 12px;
+    --order-card-width: 150px;
+    --order-card-height: 250px;
+    --order-card-columns: 2;
+    --order-card-rows: 10;
+    --order-card-background-color: #888888;
+    --order-card-title-background-color: #777777;
+    --order-card-price-background-color: #777777;
+    --order-card-quantity-background-color: #777777;
+    --order-card-total-price-background-color: #777777;
+    --order-card-status-font-size: 32pt;
+    --order-card-status-complete-font-color: #00ff00af;
+    --order-card-status-complete-background-color: #00ff003f;
+    --order-card-status-hover-complete-font-color: #00ff002f;
+    --order-card-status-hover-complete-background-color: #00ff001f;
+    --order-card-status-cancelled-font-color: #ff0000af;
+    --order-card-status-cancelled-background-color: #ff00003f;
+    --order-card-status-hover-cancelled-font-color: #ff00002f;
+    --order-card-status-hover-cancelled-background-color: #ff00001f;
+    --order-card-status-incomplete-font-color: #ffff00af;
+    --order-card-status-incomplete-background-color: #ffff003f;
+    --order-card-status-hover-incomplete-font-color: #ffff002f;
+    --order-card-status-hover-incomplete-background-color: #ffff001f;
+    --order-card-status-partial-font-color: #ff7f00af;
+    --order-card-status-partial-background-color: #ff7f003f;
+    --order-card-status-hover-partial-font-color: #ff7f002f;
+    --order-card-status-hover-partial-background-color: #ff7f001f;
+}
+
+.order-card-link {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+.order-card {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    transition: var(--order-card-hover-transition);
+}
+.order-card:hover {
+    transform: scale(var(--order-card-hover-scale), var(--order-card-hover-scale));
+}
+.order-card-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(10, auto);
+    gap: 1px 1px;
+
+    border-radius: var(--order-card-border-radius);
+    background-color: var(--order-card-background-color);
+}
+
+.order-card-picture {
+    display: flex;
+
+    justify-content: center;
+
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 6;
+}
+.order-card-image {
+    max-width: 100%;
+    border-radius: var(--order-card-border-radius) var(--order-card-border-radius) 0 0;
+}
+.order-card-title {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    grid-column: 1 / span 2;
+    grid-row: 7 / span 2;
+
+    color: var(--order-card-text-color);
+    background-color: var(--order-card-title-background-color);
+}
+
+.order-card-price {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    grid-column: 1 / span 1;
+    grid-row: 9 / span 1;
+
+    color: var(--order-card-text-color);
+    background-color: var(--order-card-price-background-color);
+}
+.order-card-quantity {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 2 / span 1;
+    grid-row: 9 / span 1;
+
+    color: var(--order-card-text-color);
+    background-color: var(--order-card-quantity-background-color);
+}
+.order-card-total-price {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    grid-column: 1 / span 2;
+    grid-row: 10 / span 1;
+
+    color: var(--order-card-text-color);
+    border-radius: 0 0 var(--order-card-border-radius) var(--order-card-border-radius);
+    background-color: var(--order-card-total-price-background-color);
+}
+.order-card-status {
+    display: flex;
+
+    font-size: var(--order-card-status-font-size);    
+    font-weight: bold;
+
+    z-index: 1;
+    position: absolute;
+
+    transform: rotate(calc(atan(-250 / 150)));
+
+    background-color: #00000000;
+
+    transition: var(--order-card-hover-transition);
+}
+.order-card-status-complete {
+    border-radius: 8px;
+    color: var(--order-card-status-complete-font-color);
+    background-color: var(--order-card-status-complete-background-color);
+    transition: var(--order-card-hover-transition);
+}
+.order-card:hover .order-card-status-complete {
+    color: var(--order-card-status-hover-complete-font-color);
+    background-color: var(--order-card-status-hover-complete-background-color);
+}
+.order-card-status-cancelled {
+    border-radius: 8px;
+    color: var(--order-card-status-cancelled-font-color);
+    background-color: var(--order-card-status-cancelled-background-color);
+    transition: var(--order-card-hover-transition);
+}
+.order-card:hover .order-card-status-cancelled {
+    color: var(--order-card-status-hover-cancelled-font-color);
+    background-color: var(--order-card-status-hover-cancelled-background-color);
+}
+.order-card-status-incomplete {
+    border-radius: 8px;
+    color: var(--order-card-status-incomplete-font-color);
+    background-color: var(--order-card-status-incomplete-background-color);
+    transition: var(--order-card-hover-transition);
+}
+.order-card:hover .order-card-status-incomplete {
+    color: var(--order-card-status-hover-incomplete-font-color);
+    background-color: var(--order-card-status-hover-incomplete-background-color);
+}
+.order-card-status-partial {
+    border-radius: 8px;
+    color: var(--order-card-status-partial-font-color);
+    background-color: var(--order-card-status-partial-background-color);
+    transition: var(--order-card-hover-transition);
+}
+.order-card:hover .order-card-status-partial {
+    color: var(--order-card-status-hover-partial-font-color);
+    background-color: var(--order-card-status-hover-partial-background-color);
+}

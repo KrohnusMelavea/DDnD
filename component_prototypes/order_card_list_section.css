@@ -1,0 +1,64 @@
+.order-card-list-section {
+ display: grid;
+
+ position: relative;
+ width: 100%;
+ 
+ grid-template-columns: repeat(10, auto);
+ 
+ margin: 40px 0;
+}
+.order-card-list-section .order-card {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+ padding: 0 2px;
+ transition: 250ms all;
+ border-radius: 12px;
+}
+.order-card-list-section .order-card:hover {
+ margin: 0 30px;
+ transform: scale(1.2);
+}
+
+.order-card-list-section .order-card-list-arrow-button {
+ position: absolute;
+ z-index: 100;
+
+ font-size: 48pt;
+ 
+ text-decoration: none;
+ color: #ffffff;
+ background: #000000;
+
+ width: 60px;
+
+ padding: 20px;
+}
+.order-card-list-section .order-card-list-left-arrow-button {
+ display: flex;
+
+ justify-content: center;
+ align-items: center;
+
+ z-index: 101;
+ top: 0;
+ bottom: 0;
+ left: 0;
+
+ background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+}
+.order-card-list-section .order-card-list-right-arrow-button {
+ display: flex;
+
+ justify-content: center;
+ align-items: center;
+
+ z-index: 101;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ 
+ background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);;
+}

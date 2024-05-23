@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>DD&D</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/ddnd/navigation_bar.css">
+    </head>
+
+    <body>
+        <div id="navigation-bar-container">
+            <a href="/ddnd/index.php">
+                <img id="logo" src="/ddnd/res/logo.png">
+            </a>
+            
+            <div id="search-container">
+                <input id="search-input" placeholder="Search for products...">
+                <select id="store-selection">
+                    <option class="store-selection-option" value="all">All Items</option>
+                    <option class="store-selection-option" value="physical">In-Store</option>
+                    <option class="store-selection-option" value="virtual">In-Game</option>
+                </select>
+            </div>
+
+            <div id="navigation-bar">
+                <a href="/ddnd/account/index.php">
+                    <div id="account">
+                        <img id="pfp" src='<?php include "$_SERVER[DOCUMENT_ROOT]/ddnd/get_pfp_url.php"; ?>'>
+                    </div>
+                </a>
+                <div id="cart-container" onclick="cart_container_onclick(event)">
+                    <img id="cart" src="/ddnd/res/cart.png">
+                    <p1 id="cart-count">
+                        <?php include "$_SERVER[DOCUMENT_ROOT]/ddnd/get_cart_item_count.php"; ?>
+                    </p1>
+                </div>
+            </div>
+        </div>
+
+        <div id="login-form">
+            <h1 id="login-form-head">Login:</h1>
+            <b><p1 class="login-form-label">Username:<p1></b><br>
+            <div class="login-input"><input id="username-input" class="login-form-input" placeholder="Username"></div>
+            <br>
+            <b><p1 class="login-form-label">Password:</p1></b><br>
+            <div class="login-input"><input id="password-input" class="login-form-input" type="password" placeholder="Password"></div>
+            <br><br><br>
+            <div id="login-button-container"><button id="login-button">Login</button></div>
+            <label id="remember-me-label"><input id="remember-me-checkbox" type="checkbox" checked="checked">Remember me</label><br>\
+            <br><br>
+            
+            <label id="register-label">
+                New to DD&D?&nbsp;<a href="/ddnd/register/index.php">Register</a>
+            </label>
+        </div>
+    </body>
+</html>
