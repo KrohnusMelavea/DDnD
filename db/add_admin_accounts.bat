@@ -1,0 +1,1 @@
+mysql -u root < add_admin_accounts.sql

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>navigation-bar</title>
+        <link rel="stylesheet" href="navigation_bar.css">
+    </head>
+
+    <body>
+        <div id="navigation-bar-container">
+            <img id="logo" src="res/logo.png">
+            
+            <div id="search-container">
+                <input id="search-input" placeholder="Search for products...">
+                <select id="store-selection">
+                    <option class="store-selection-option" value="all">All Items</option>
+                    <option class="store-selection-option" value="physical">In-Store</option>
+                    <option class="store-selection-option" value="virtual">In-Game</option>
+                </select>
+            </div>
+        
+            <div id="navigation-bar">
+                <div id="account">
+                    <img id="pfp" src="res/profile.png">
+                </div>
+                <div id="cart-container" onclick="cart_container_onclick(event)">
+                    <img id="cart" src="res/cart.png">
+                    <p1 id="cart-count">0</p1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
