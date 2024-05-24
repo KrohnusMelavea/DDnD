@@ -1,5 +1,5 @@
 function cart_container_onclick(event) {
-    window.location.href = "/ddnd/cart/index.php";
+    window.location.href = "/ddnd/cart";
 }
 
 function username_input_onkeypress(event) {
@@ -20,7 +20,7 @@ function login_button_onclick(event) {
     xhr.onload = () => {
         const response = JSON.parse(xhr.responseText);
         if (response['status'] == 0) {
-            window.location.replace("/ddnd/index.php");
+            window.location.replace("/ddnd");
         }
     }
     xhr.send(body);

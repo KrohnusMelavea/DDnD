@@ -1,0 +1,31 @@
+<div id="navigation-bar-container">
+ <a href="/ddnd">
+  <img id="logo" src="/ddnd/res/logo.png">
+ </a>
+ 
+ <div id="search-container">
+  <input id="search-input" placeholder="Search for products...">
+  <select id="store-selection">
+   <option class="store-selection-option" value="all">All Items</option>
+   <option class="store-selection-option" value="physical">In-Store</option>
+   <option class="store-selection-option" value="virtual">In-Game</option>
+  </select>
+  <div id="search-button" onclick="search_button_onclick(event)">
+   <img id="search-button-magnifier" src="/ddnd/res/magnifier.png">
+  </div>
+ </div>
+
+ <div id="navigation-bar">
+  <a href="/ddnd/account">
+   <div id="account">
+    <img id="pfp" src="%s">
+   </div>
+  </a>
+   <div id="cart-container" onclick="cart_container_onclick(event)">
+    <img id="cart" src="/ddnd/res/cart.png">
+    <p1 id="cart-count">
+     %u
+    </p1>
+   </div>
+ </div>
+</div>

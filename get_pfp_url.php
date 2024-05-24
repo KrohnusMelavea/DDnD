@@ -1,9 +1,7 @@
 <?php
 
-if (session_status() == PHP_SESSION_ACTIVE && isset($_SESSION['pfp_url'])) {
-    echo $_SESSION['pfp_url'];
-} else {
-    echo "/ddnd/res/profile.png";
+/*str*/ function get_pfp_url(/*str*/$user_uuid) {
+ return "/db/userdata/$user_uuid/profile.png";
 }
 
 ?>
