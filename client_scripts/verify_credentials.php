@@ -1,6 +1,6 @@
 <?php
 
-require("scripts/verify_credentials.php");
+require("server_scripts/verify_credentials.php");
 
 if (session_status() != PHP_SESSION_ACTIVE) {
  session_start();

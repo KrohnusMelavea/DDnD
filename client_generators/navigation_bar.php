@@ -1,8 +1,8 @@
 <?php
 
-require("scripts/get_cart_items.php");
-require("scripts/get_account_info.php");
-require("generators/navigation_bar.php");
+require("server_scripts/get_cart_items.php");
+require("server_scripts/get_account_info.php");
+require("server_generators/navigation_bar.php");
 
 if (session_status() != PHP_SESSION_ACTIVE) {
  session_start();

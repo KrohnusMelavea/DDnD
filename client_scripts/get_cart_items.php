@@ -1,6 +1,6 @@
 <?php
 
-require("scripts/get_cart_items.php");
+require("server_scripts/get_cart_items.php");
 
 if (session_status() != PHP_SESSION_ACTIVE) {
  session_start();

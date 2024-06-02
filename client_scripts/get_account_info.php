@@ -1,6 +1,6 @@
 <?php
 
-require("scripts/get_account_info.php");
+require("server_scripts/get_account_info.php");
 
 if (session_status() != PHP_SESSION_ACTIVE) {
  session_start();

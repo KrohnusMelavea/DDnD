@@ -1,1 +1,0 @@
-mysql -u root < setup_schema.sql

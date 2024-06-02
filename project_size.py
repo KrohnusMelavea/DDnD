@@ -26,3 +26,4 @@ for path, _, file_names in os.walk(os.getcwd()):
             print(f"{file_path}: {line_count} lines, {char_count} chars")
 
 print(f"Total: {total_line_count} lines, {total_char_count} chars")
+input()
