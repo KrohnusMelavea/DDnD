@@ -14,7 +14,7 @@ function get_account_info($account_uuid) {
   if ($mysql_result->num_rows == 0) {
    $account_info = new account_info();
   } else {
-   $account_info = new account_info($profile_url = "/db/userdata/$a/profile.png");
+   $account_info = new account_info($profile_url = "/db/profiles/$a/profile.png");
   }
 
   $mysql_result->free_result();
