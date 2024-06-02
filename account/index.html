@@ -4,12 +4,13 @@
  <head>
   <title>DD&D</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href='/ddnd/navigation_bar.css'>
-  <script src="/ddnd/navigation_bar.js"></script>
+  <link rel="stylesheet" href='/navigation_bar.css'>
+  <script src="/navigation_bar.js"></script>
+  <script src="script.js"></script>
  </head>
 
  <body>
-  <?php include("$_SERVER[DOCUMENT_ROOT]/navigation_bar_generator.php"); ?>
+  <?php include("client_generators/navigation_bar.php"); ?>
   <button id="logout-button" onclick="logout_button_onclick(event)">Logout</button>
  </body>
 </html>

@@ -1,12 +1,14 @@
 <?php
 
-session_start();
+if (session_status() != PHP_SESSION_ACTIVE) {
+ session_start();
+}
 
-if (session_status() == PHP_SESSION_ACTIVE && isset($_SESSION["uuid"])) {
-    unset($_SESSION["uuid"]);
-    echo "{\"status\":0}";  /* Success */
+if (isset($_SESSION["account_uuid"])) {
+ unset($_SESSION["account_uuid"]);
+ echo "{\"status\":0}";  /* Success */
 } else {
-    echo "{\"status\":1}";  /* Failure */
+ echo "{\"status\":1}";  /* Failure */
 }
 
 ?>

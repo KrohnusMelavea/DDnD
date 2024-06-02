@@ -1,5 +1,5 @@
 function cart_container_onclick(event) {
- window.location.href = "/ddnd/cart";
+ window.location.href = "/cart";
 }
 function search_button_onclick(event) {
  let search_input_element = document.getElementById("search-input");
