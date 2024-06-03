@@ -4,7 +4,6 @@ require_once("objects/product_listing_joined.php");
 require_once("server_scripts/get_product_listing_images.php");
 
 $product_listings_page_template = file_get_contents("$_SERVER[DOCUMENT_ROOT]/db/query_templates/product_listings_page.sql");
-
 function get_product_listings($page, $products_per_page, $mysql_connection = null) {
  global $product_listings_page_template;
 
@@ -20,11 +19,14 @@ function get_product_listings($page, $products_per_page, $mysql_connection = nul
 
  $start_index = $page * $products_per_page;
  $end_index = ($page + 1) * $products_per_page;
- $product_listings_page_query = sprintf($product_listings_page_template, $start_index, "iPrice", $end_index, $end_index + 1);
+ $product_listings_page_query = sprintf($product_listings_page_template, "iPrice", "ASC", $products_per_page, $page * $products_per_page);
  $mysql_product_listing_result = mysqli_query($mysql_connection, $product_listings_page_query);
- if ($mysql_product_listing_result->num_rows == 0) {
+ if (!$mysql_product_listing_result->num_rows) {
   return array();
  }
+
+ error_log(sprintf("[DEBUG] Product Listing Count: %u", $mysql_product_listing_result->num_rows));
+ error_log(sprintf("[DEBUG] Query: %s", $product_listings_page_query));
 
  $product_listings = array();
  for ($i = 0; $i < $mysql_product_listing_result->num_rows; ++$i) {
