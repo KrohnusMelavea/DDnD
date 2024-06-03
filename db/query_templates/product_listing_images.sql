@@ -1,0 +1,1 @@
+SELECT sPhotoURL, sCaption FROM TB_ProductListingImages WHERE vProductListingUUID = UNHEX('%s') ORDER BY (iIndex);
