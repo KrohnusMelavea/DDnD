@@ -28,14 +28,16 @@ function get_product_listings($page, $products_per_page, $mysql_connection = nul
   $mysql_product_listing_result_row = $mysql_product_listing_result->fetch_row();
   $product_listings[] = new product_listing_joined(
    new product_info(
+    $mysql_product_listing_result_row[0],
+    $mysql_product_listing_result_row[1], 
     $mysql_product_listing_result_row[2], 
-    $mysql_product_listing_result_row[3], 
-    $mysql_product_listing_result_row[4]),
+    $mysql_product_listing_result_row[3]),
    new product_listing(
+    $mysql_product_listing_result_row[4],
     $mysql_product_listing_result_row[5], 
     $mysql_product_listing_result_row[6], 
     $mysql_product_listing_result_row[7], 
-    get_product_listing_images(bin2hex($mysql_product_listing_result_row[0]), $mysql_connection))
+    get_product_listing_images(bin2hex($mysql_product_listing_result_row[4]), $mysql_connection))
   );
  }
 

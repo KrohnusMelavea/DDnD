@@ -67,5 +67,5 @@ INSERT INTO TB_ProductListingImages (vUUID, vProductListingUUID, iIndex, sPhotoU
 (UNHEX('50122689c09c452dac06623fb9f1a004'), UNHEX('71b51d158bac4ce5aba0db8279c90f3f'), 0, '/db/products/71b51d158bac4ce5aba0db8279c90f3f/image.png', ''),
 (UNHEX('a5fc8c0e72164603ad2f0291f29d9cd6'), UNHEX('8e0891eed4d6407c8e70725aa5a2989f'), 0, '/db/products/8e0891eed4d6407c8e70725aa5a2989f/image.png', ''),
 (UNHEX('b0d65c0200854847a0091b637191c326'), UNHEX('ded81d365b9a4a1bb3a9dbc854320166'), 0, '/db/products/ded81d365b9a4a1bb3a9dbc854320166/image.png', ''),
-(UNHEX('2582b8a2586a43ee9726a96938e32949'), UNHEX('46ea70f462ef488f8bdce3d04e253790'), 0, '/db/products/46ea70f462ef48 f8bdce3d04e253790/image.png', ''),
+(UNHEX('2582b8a2586a43ee9726a96938e32949'), UNHEX('46ea70f462ef488f8bdce3d04e253790'), 0, '/db/products/46ea70f462ef488f8bdce3d04e253790/image.png', ''),
 (UNHEX('459296869e0742d2b52337bd92049bfa'), UNHEX('3e6a95783b3440e0a61fc2c07a5d7773'), 0, '/db/products/3e6a95783b3440e0a61fc2c07a5d7773/image.png', '');

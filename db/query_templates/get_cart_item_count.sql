@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM TB_CartItems WHERE TB_CartItems.vUUID = UNHEX('%s');

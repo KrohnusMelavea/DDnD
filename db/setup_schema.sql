@@ -44,7 +44,19 @@ CREATE TABLE TB_ProductListings (
  dtEnd        TIMESTAMP      NULL,
 
  CONSTRAINT TB_ProductListings_PK PRIMARY KEY (vUUID),
- CONSTRAINT TB_ProductListing_Product_FK FOREIGN KEY (vProductUUID) REFERENCES TB_Products(vUUID)
+ CONSTRAINT TB_ProductListings_Product_FK FOREIGN KEY (vProductUUID) REFERENCES TB_Products(vUUID)
+);
+CREATE TABLE TB_CartItems (
+ vUUID               BINARY(16) NOT NULL,
+
+ vProfileUUID        BINARY(16) NOT NULL,
+ vProductListingUUID BINARY(16) NOT NULL,
+
+ iQuantity           INTEGER    NOT NULL,
+
+ CONSTRAINT TB_CartItems_PK PRIMARY KEY (vUUID),
+ CONSTRAINT TB_CartItems_Profile_FK FOREIGN KEY (vProfileUUID) REFERENCES TB_Profiles(vUUID),
+ CONSTRAINT TB_CartItems_ProductListing_FK FOREIGN KEY (vProductListingUUID) REFERENCES TB_ProductListings(vUUID)
 );
 CREATE TABLE TB_ProductListingImages (
  vUUID               BINARY(16) NOT NULL,
