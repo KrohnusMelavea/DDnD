@@ -24,7 +24,7 @@ function get_cart_page($account_uuid, $page, $cart_items_per_page, $mysql_connec
  $cart_page = array();
  for ($i = 0; $i < $mysql_result->num_rows; ++$i) {
   $cart_page_row = $mysql_result->fetch_row();
-  $cart_page[] = new cart_item($cart_page_row[0], $cart_page_row[1], $cart_page_row[2], $cart_page_row[3], $cart_page_row[4], get_product_listing_images(bin2hex($cart_page_row[0]), $mysql_connection)[0]->url);
+  $cart_page[] = new cart_item(bin2hex($cart_page_row[0]), $cart_page_row[1], $cart_page_row[2], $cart_page_row[3], $cart_page_row[4], get_product_listing_images(bin2hex($cart_page_row[0]), $mysql_connection)[0]->url);
  }
 
  maybe_destroy_mysql_connection($mysql_connection, $mysql_connection_created);

@@ -12,14 +12,14 @@ function set_cart_item_quantity($account_uuid, $product_listing_uuid, $quantity,
  global $add_new_item_to_cart_query_template;
  global $set_cart_item_quantity_query_template;
 
- [$mysql_connection, $mysql_connection_created, $mysql_connection_created_success] = maybe_create_mysql_connection($mysql_connection);
- if ($mysql_connection_created_success == 1) {
-  return array("success" => 1);
+ ["mysql_connection" => $mysql_connection, "created" => $mysql_connection_created, "success" => $mysql_connection_created_success] = maybe_create_mysql_connection($mysql_connection);
+ if (!$mysql_connection_created_success) {
+  return array("success" => 0);
  }
 
  $get_cart_item_uuid_query = sprintf($get_cart_item_uuid_query_template, $account_uuid, $product_listing_uuid);
  $mysql_result = mysqli_query($mysql_connection, $get_cart_item_uuid_query);
- if ($mysql_result->num_rows) {
+ if ($mysql_result->num_rows != 0) {
   $mysql_result->free_result();
   $mysql_query = sprintf($set_cart_item_quantity_query_template, $quantity, $account_uuid, $product_listing_uuid);
  } else {
@@ -30,9 +30,9 @@ function set_cart_item_quantity($account_uuid, $product_listing_uuid, $quantity,
  maybe_destroy_mysql_connection($mysql_connection, $mysql_connection_created);
 
  if ($mysql_result) {
-  return 0;
+  return array("success" => 1);
  } else {
-  return 1;
+  return array("success" => 0);
  }
 }
 

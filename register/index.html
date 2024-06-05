@@ -13,14 +13,30 @@
   <?php include("client_generators/navigation_bar.php"); ?>
 
   <div id="register-form">
-   <h1 id="register-form-head">Login:</h1>
+   <h1 id="register-form-head">Register:</h1>
+   <b><p1 class="register-form-label">Name:</p1></b><br>
+   <div class="register-input"><input id="name-input" class="register-form-input" placeholder="Name" onkeypress="name_input_onkeypress(event)"></div>
+   <br>
+   <b><p1 class="register-form-label">Email:</p1></b><br>
+   <div class="register-input"><input id="email-input" class="register-form-input" placeholder="email@provider.com" onkeypress="email_input_onkeypress(event)"></div>
+   <br>
+   <b><p1 class="register-form-label">Cellphone:</p1></b><br>
+   <div class="register-input"><input id="cellphone-input" class="register-form-input" placeholder="" onkeypress="cellphone_input_onkeypress(event)"></div>
+   <br>
+   <b><p1 class="register-form-label">Address:</p1></b><br>
+   <div class="register-input"><input id="address-input" class="register-form-input" placeholder="42 Somewhereington Ave, Someplacia" onkeypress="address_input_onkeypress(event)"></div>
+   <br>
    <b><p1 class="register-form-label">Username:<p1></b><br>
    <div class="register-input"><input id="username-input" class="register-form-input" placeholder="Username" onkeypress="username_input_onkeypress(event)"></div>
    <br>
    <b><p1 class="register-form-label">Password:</p1></b><br>
    <div class="register-input"><input id="password-input" class="register-form-input" type="password" placeholder="Password" onkeypress="password_input_onkeypress(event)"></div>
-   <br><br><br>
-   <div id="register-button-container"><button id="register-button" onclick="login_button_onclick(event)">Register</button></div>
+   <br>
+   <b><p1 class="register-form-label">Retype Password:</p1></b><br>
+   <div class="register-input"><input id="retyped-password-input" class="register-form-input" type="password" placeholder="Password" onkeypress="retyped_password_input_onkeypress(event)"></div>
+   <br>
+   <br><br>
+   <div id="register-button-container"><button id="register-button" onclick="register_button_onclick(event)">Register</button></div>
    <label id="remember-me-label"><input id="remember-me-checkbox" type="checkbox" checked="checked">Remember me</label><br>
    <br><br>
    

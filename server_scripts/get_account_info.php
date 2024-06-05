@@ -13,7 +13,11 @@ function get_account_info($account_uuid) {
   if ($mysql_result->num_rows == 0) {
    $account_info = new account_info();
   } else {
-   $account_info = new account_info($profile_url = "/db/profiles/$account_uuid/profile.png");
+   if (file_exists("$_SERVER[DOCUMENT_ROOT]/db/profiles/$account_uuid/profile.png")) {
+    $account_info = new account_info($profile_url = "/db/profiles/$account_uuid/profile.png");
+   } else {
+    $account_info = new account_info();
+   }
   }
 
   $mysql_result->free_result();

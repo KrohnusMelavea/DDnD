@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    
-    include('index.html');
+session_start();
+
+include('index.html');
 ?>
 

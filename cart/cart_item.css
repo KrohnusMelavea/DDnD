@@ -41,6 +41,7 @@
  
  justify-content: center;
 
+
  grid-template-columns: repeat(2, 50%);
  grid-template-rows: repeat(2, 50%);
 
@@ -72,13 +73,16 @@
 
  background-color: #bbbbbb;
 
- padding-left: 5pt;
- padding-right: 5pt;
+ padding-left: 10pt;
+ padding-right: 10pt;
+}
+.cart-item-quantity-input {
+ max-width: 25pt;
 }
 .cart-item-total-price {
  display: flex;
 
- grid-column: 1 / span 1;
+ grid-column: 1 / span 2;
  grid-row: 0 / span 1;
 
  justify-content: center;
