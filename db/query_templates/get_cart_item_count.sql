@@ -1,1 +1,1 @@
-SELECT COUNT(*) FROM TB_CartItems WHERE TB_CartItems.vUUID = UNHEX('%s');
+SELECT COUNT(*) FROM TB_CartItems WHERE TB_CartItems.vProfileUUID = UNHEX('%s');

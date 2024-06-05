@@ -1,24 +1,22 @@
 <?php
 
+require_once("server_scripts/debug_log.php");
 require_once("objects/product_listing_image.php");
+require_once("server_scripts/maybe_create_mysql_connection.php");
+require_once("server_scripts/maybe_destroy_mysql_connection.php");
 
 $product_listing_images_template = file_get_contents("$_SERVER[DOCUMENT_ROOT]/db/query_templates/product_listing_images.sql");
 function get_product_listing_images($uuid, $mysql_connection = null) {
  global $product_listing_images_template;
 
- if ($mysql_connection == null) {
-  $mysql_connection = new mysqli("localhost", "root", null, "DB_DDnD", null, null);
-  if ($mysql_connection->connect_errno) {
-   return array(new product_listing_image());
-  }
-  $mysql_connection_supplied = false;
- } else {
-  $mysql_connection_supplied = true;
+ ["mysql_connection" => $mysql_connection, "created" => $mysql_connection_created, "success" => $mysql_connection_created_success] = maybe_create_mysql_connection($mysql_connection);
+ if (!$mysql_connection_created_success) {
+  return array(new product_listing_image());
  }
 
- $mysql_query = sprintf($product_listing_images_template, $uuid);
- $mysql_result = mysqli_query($mysql_connection, $mysql_query);
+ $mysql_result = mysqli_query($mysql_connection, sprintf($product_listing_images_template, $uuid));
  if (!$mysql_result->num_rows) {
+  debug_log("No Product Listing Images");
   return array(new product_listing_image());
  }
  $product_listing_images = array();
@@ -28,9 +26,7 @@ function get_product_listing_images($uuid, $mysql_connection = null) {
  }
 
  $mysql_result->free_result();
- if (!$mysql_connection_supplied) {
-  $mysql_connection->close();
- }
+ maybe_destroy_mysql_connection($mysql_connection, $mysql_connection_created);
 
  return $product_listing_images;
 }

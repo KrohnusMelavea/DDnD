@@ -8,13 +8,12 @@ function get_account_info($account_uuid) {
  if ($mysql_connection->connect_errno) {
   $account_info = new account_info();
  } else {
-  $a = bin2hex($account_uuid);
-  $mysql_result = mysqli_query($mysql_connection, "SELECT * FROM TB_Profiles WHERE TB_Profiles.vUUID = X'$a'");
+  $mysql_result = mysqli_query($mysql_connection, "SELECT * FROM TB_Profiles WHERE TB_Profiles.vUUID = X'$account_uuid'");
 
   if ($mysql_result->num_rows == 0) {
    $account_info = new account_info();
   } else {
-   $account_info = new account_info($profile_url = "/db/profiles/$a/profile.png");
+   $account_info = new account_info($profile_url = "/db/profiles/$account_uuid/profile.png");
   }
 
   $mysql_result->free_result();
