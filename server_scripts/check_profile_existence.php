@@ -9,7 +9,7 @@ function check_profile_existence($username, $mysql_connection = null) {
 
  ["mysql_connection" => $mysql_connection, "created" => $mysql_connection_created, "success" => $mysql_connection_created_success] = maybe_create_mysql_connection($mysql_connection);
  if (!$mysql_connection_created_success) {
-  return array("exists" => 0, "status" => 1);
+  return array("exists" => false, "status" => 1);
  }
 
  $mysql_query = mysqli_query($mysql_connection, sprintf($check_profile_existence_query_template, $username));

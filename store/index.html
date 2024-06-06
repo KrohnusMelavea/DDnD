@@ -14,5 +14,11 @@
  <body>
   <?php include("client_generators/navigation_bar.php"); ?>
   <?php include("client_generators/product_listings.php"); ?>
+
+  <div id="page-buttons">
+   <button id="left-page-button" onclick="left_page_button_onclick(event)">&lt</button>
+   <label id="page-label">1</label>
+   <button id="right-page-button" onclick="right_page_button_onclick(event)">&gt</button>
+  </div>
  </body>
 </html>

@@ -1,0 +1,10 @@
+#page-buttons {
+ display: flex;
+
+ justify-content: center;
+}
+
+#page-label {
+ padding-left: 5pt;
+ padding-right: 5pt;
+}

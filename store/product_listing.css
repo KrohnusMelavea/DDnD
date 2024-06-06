@@ -12,7 +12,7 @@
  background-color: #cccccc;
  margin: 0.5%;
 }
-.product-listing-image {
+.product-listing-header .product-listing-image {
  height: 100%;
 }
 .product-listing-body {

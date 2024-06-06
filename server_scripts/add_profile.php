@@ -13,7 +13,7 @@ function add_profile($name, $email, $cellphone, $address, $username, $password, 
   return array("status" => 1);
  }
 
- ["exists" => $profile_exists, "status" => $status] = check_profile_existence($username, $mysql_connection)["status"];
+ ["exists" => $profile_exists, "status" => $status] = check_profile_existence($username, $mysql_connection);
  if ($status != 0) {
   maybe_destroy_mysql_connection($mysql_connection, $mysql_connection_created);
   return array("status" => 1);

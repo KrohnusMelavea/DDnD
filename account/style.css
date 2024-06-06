@@ -1,3 +1,57 @@
 body {
-    background-color: #ffffff;
+ background-color: #ffffff;
+}
+
+.account-container {
+ position: relative;
+
+ justify-content: center;
+ align-items: center;
+
+ display: grid;
+
+ grid-template-columns: repeat(2, 25%);
+ grid-template-rows: 50pt 200pt 50pt;
+}
+
+.account-label {
+ text-align: center;
+ font-size: 24pt;
+
+ grid-column: 1 / span 2;
+ grid-row: 1 / span 1;
+}
+#account-information {
+ grid-column: 1 / span 1;
+ grid-row: 2 / span 1;
+
+ height: 100%;
+
+ background-color: #eeeeee;
+}
+#account-information:hover {
+ background-color: #dddddd;
+}
+#account-orders {
+ grid-column: 2 / span 1;
+ grid-row: 2 / span 1;
+
+ height: 100%;
+
+ background-color: #eeeeee;
+}
+#account-orders:hover {
+ background-color: #dddddd;
+}
+
+#logout-button {
+ grid-column: 1 / span 2;
+ grid-row: 3 / span 1;
+
+ height: 50%;
+
+ background-color: #eeeeee;
+}
+#logout-button:hover {
+ background-color: #dddddd;
 }

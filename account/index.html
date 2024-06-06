@@ -11,6 +11,22 @@
 
  <body>
   <?php include("client_generators/navigation_bar.php"); ?>
-  <button id="logout-button" onclick="logout_button_onclick(event)">Logout</button>
+  
+  <div class="account-container">
+   <div class="account-label">
+    <label>Account</label>
+   </div>
+   
+   <button id="account-information" onclick="account_information_button_onclick()">
+    <label>Account Information</label>
+   </button>
+   <button id="account-orders" onclick="account_orders_button_onclick()">
+    <label>Account Orders</label>
+   </button>
+
+   <button id="logout-button" onclick="logout_button_onclick(event)">Logout</button>
+  </div>
+
+  
  </body>
 </html>

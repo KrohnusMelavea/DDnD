@@ -1,3 +1,10 @@
+function account_information_button_onclick() {
+ window.location.href = "/account/information";
+}
+function account_orders_button_onclick() {
+ window.location.href = "/account/orders";
+}
+
 function cart_container_onclick(event) {
  window.location.href = "/cart";
 }
