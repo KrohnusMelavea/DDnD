@@ -1,3 +1,7 @@
+function checkout_button_onclick() {
+ 
+}
+
 function cart_item_oninput(event) {
  if (event.srcElement.value == "") return;
  const quantity = parseInt(event.srcElement.value);

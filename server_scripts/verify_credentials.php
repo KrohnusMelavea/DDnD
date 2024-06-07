@@ -12,7 +12,7 @@ function verify_credentials($username, $password, $mysql_connection = null) {
 
  if (!$mysql_connection_created_success) {
   debug_log("Failed MySQL Connection Creation");
-  return array("account_uuid" => null, "status" => 1);
+  return array("status" => 1);
  }
 
  $mysql_result = mysqli_query($mysql_connection, sprintf($verify_credentials_query_template, $username, $password));
@@ -28,7 +28,12 @@ function verify_credentials($username, $password, $mysql_connection = null) {
  
  maybe_destroy_mysql_connection($mysql_connection, $mysql_connection_created);
 
- return array("account_uuid" => $account_uuid, "status" => 0);
+ if ($account_uuid != null) {
+  $_SESSION["account_uuid"] = $account_uuid;
+  return array("status" => 0);
+ } else {
+  return array("status" => 1);
+ }
 }
 
 ?>
