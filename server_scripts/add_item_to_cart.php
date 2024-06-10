@@ -10,14 +10,11 @@ function add_item_to_cart($account_uuid, $product_listing_uuid, $quantity, $mysq
  global $get_cart_item_uuid_query_template;
  global $add_new_item_to_cart_query_template;
 
+ $mysql_connection_received = true;
  if ($mysql_connection == null) {
   $mysql_connection = new mysqli("localhost", "root", null, "DB_DDnD", null, null);
-  if ($mysql_connection->connect_errno) {
-   return 1;
-  }
+  if ($mysql_connection->connect_errno) return 1;
   $mysql_connection_received = false;
- } else {
-  $mysql_connection_received = true;
  }
 
  $get_cart_item_uuid_query = sprintf($get_cart_item_uuid_query_template, $account_uuid, $product_listing_uuid);
@@ -30,15 +27,10 @@ function add_item_to_cart($account_uuid, $product_listing_uuid, $quantity, $mysq
  }
  $mysql_result = mysqli_query($mysql_connection, $mysql_query);
 
- if (!$mysql_connection_received) {
-  $mysql_connection->close();
- }
+ if (!$mysql_connection_received) $mysql_connection->close();
 
- if ($mysql_result) {
-  return 0;
- } else {
-  return 1;
- }
+ if ($mysql_result) return 0;
+ return 1;
 }
 
 ?>

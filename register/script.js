@@ -33,7 +33,6 @@ function register_button_onclick(event) {
   sPassword: document.getElementById("password-input").value
  });
  xhr.onload = () => {
-  console.log(xhr.responseText);
   const response = JSON.parse(xhr.responseText);
   if (response['status'] == 0) {
    window.location.replace("/");
