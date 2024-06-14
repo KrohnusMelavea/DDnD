@@ -1,0 +1,25 @@
+body {
+ background-color: #dddddd;
+}
+
+.navigation-bar {
+ display: flex;
+}
+
+.logo {
+ height: 128px;
+ left: 0px;
+}
+
+.store {
+ position: absolute;
+ right: 115px;
+}
+.account {
+ position: absolute;
+ right: 50px;
+}
+.cart {
+ position: absolute;
+ right: 10px;
+}
