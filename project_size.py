@@ -4,6 +4,8 @@ file_extensions = ".php", ".html", ".js", ".css", ".bat", ".sql", ".py"
 blacklisted_files = ".gitignore",
 blacklisted_folders = ".git",
 
+stdout = ""
+
 total_line_count = 0
 total_char_count = 0
 total_file_count = 0
@@ -25,7 +27,6 @@ for path, _, file_names in os.walk(os.getcwd()):
             total_line_count += line_count
             total_char_count += char_count
             total_file_count += 1
-            print(f"{file_path}: {line_count} lines, {char_count} chars")
+            stdout += f"{file_path}: {line_count} lines, {char_count} chars" + '\n'
 
-print(f"Total: {total_line_count} lines, {total_char_count} chars, {total_file_count} files")
-input()
+print(f"{stdout}Total: {total_line_count} lines, {total_char_count} chars, {total_file_count} files")
