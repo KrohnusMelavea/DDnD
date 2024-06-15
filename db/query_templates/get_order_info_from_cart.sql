@@ -1,0 +1,1 @@
+SELECT vProductListingUUID, iQuantity

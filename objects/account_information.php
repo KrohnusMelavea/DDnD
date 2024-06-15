@@ -1,6 +1,6 @@
 <?php
 
-class account_info {
+class account_information {
  public $name;
  public $email;
  public $cellphone;

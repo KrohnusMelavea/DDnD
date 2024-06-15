@@ -1,14 +1,15 @@
 <?php
 
+require_once("server_scripts/debug_log.php");
 require_once("server_scripts/get_account_information.php");
 
 $account_information_template = file_get_contents("$_SERVER[DOCUMENT_ROOT]/templates/account_information.html");
 function generate_account_information($account_uuid) {
  global $account_information_template;
 
- $account_information = get_account_information($account_uuid);
+ $result = get_account_information($account_uuid);
 
- return array("account_information" => sprintf($account_information_template, $account_information->name, $account_information->email, $account_information->cellphone, $account_information->address, $account_information->username, $account_information->password), "status" => 0);
+ return array("account_information" => sprintf($account_information_template, $result["account_information"]->name, $result["account_information"]->email, $result["account_information"]->cellphone, $result["account_information"]->address, $result["account_information"]->username, $result["account_information"]->password), "status" => $result["status"]);
 }
 
 ?>

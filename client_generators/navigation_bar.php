@@ -11,8 +11,12 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 
 if (isset($_SESSION["account_uuid"])) {
  ["cart_item_count" => $cart_item_count, "status" => $status] = get_cart_item_count(bin2hex($_SESSION["account_uuid"]));
- $account_info = get_account_information(bin2hex($_SESSION["account_uuid"]));
- echo generate_navigation_bar($account_info->profile_url, $cart_item_count);
+ $result = get_account_information(bin2hex($_SESSION["account_uuid"]));
+ if ($result["status"] == 0) {
+  echo generate_navigation_bar($result["account_information"]->profile_url, $cart_item_count);
+ } else {
+  echo "";
+ }
 } else {
  echo generate_navigation_bar("/res/profile.png", 0);
 }

@@ -1,5 +1,6 @@
 <?php
 
+require_once("server_scripts/debug_log.php");
 require_once("server_scripts/maybe_create_mysql_connection.php");
 require_once("server_scripts/maybe_destroy_mysql_connection.php");
 
