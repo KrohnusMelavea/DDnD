@@ -12,11 +12,13 @@ function get_cart_item_count($account_uuid, $mysql_connection = null) {
 
  ["mysql_connection" => $mysql_connection, "created" => $mysql_connection_created, "success" => $mysql_connection_created_success] = maybe_create_mysql_connection($mysql_connection);
  if (!$mysql_connection_created_success) {
+  debug_log("bruh");
   return array("cart_item_count" => 0, "status" => 1);
  }
 
  $mysql_result = mysqli_query($mysql_connection, $get_cart_item_count_query);
- if (!$mysql_result->num_rows) {
+ if ($mysql_result->num_rows == 0) {
+  debug_log("bruh");
   maybe_destroy_mysql_connection($mysql_connection, $mysql_connection_created);
   return array("cart_item_count" => 0, "status" => 1);
  }

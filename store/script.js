@@ -19,7 +19,6 @@ function right_page_button_onclick(event) {
   url_params.set("page",  page.toString());
  }
  window.location.search = url_params;
- 
 }
 
 function add_cart_onclick(event) {
@@ -27,6 +26,7 @@ function add_cart_onclick(event) {
 }
 
 function add_item_to_cart(listing_uuid) {
+ console.log("bruh");
  const xhr = new XMLHttpRequest();
  xhr.open("POST", "/client_scripts/add_item_to_cart.php");
  xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");

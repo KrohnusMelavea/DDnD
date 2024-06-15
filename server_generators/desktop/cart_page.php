@@ -1,7 +1,7 @@
 <?php
 
 require_once("objects/cart_item.php");
-require_once("server_generators/cart_item.php");
+require_once("server_generators/desktop/cart_item.php");
 require_once("server_scripts/get_cart_page.php");
 require_once("server_scripts/maybe_create_mysql_connection.php");
 require_once("server_scripts/maybe_destroy_mysql_connection.php");

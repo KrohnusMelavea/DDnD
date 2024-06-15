@@ -1,6 +1,6 @@
 <?php
 
-require_once("server_generators/cart_page.php");
+require_once("server_generators/desktop/cart_page.php");
 
 if (session_status() != PHP_SESSION_ACTIVE) {
  session_start();

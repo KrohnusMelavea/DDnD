@@ -1,6 +1,6 @@
 <?php
 
-require_once("server_generators/account_information.php");
+require_once("server_generators/desktop/account_information.php");
 
 if (session_status() != PHP_SESSION_ACTIVE) {
  session_start();

@@ -12,8 +12,9 @@
  </head>
 
  <body>
-  <?php include("client_generators/navigation_bar.php"); ?>
-  <?php include("client_generators/product_listings.php"); ?>
+  <div id="navigation-bar-container"></div>
+  
+  <?php include("client_generators/desktop/product_listings.php"); ?>
 
   <div id="page-buttons">
    <button id="left-page-button" onclick="left_page_button_onclick(event)">&lt</button>

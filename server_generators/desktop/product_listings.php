@@ -1,7 +1,7 @@
 <?php
 
 require_once("server_scripts/get_product_listings.php");
-require_once("server_generators/product_listing.php");
+require_once("server_generators/desktop/product_listing.php");
 
 $product_listings_template = file_get_contents("$_SERVER[DOCUMENT_ROOT]/templates/product_listings.html");
 function generate_product_listings($page, $products_per_page) {
