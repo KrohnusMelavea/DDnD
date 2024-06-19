@@ -8,7 +8,7 @@ require_once("server_scripts/maybe_destroy_mysql_connection.php");
 function get_account_orders($account_uuid, $mysql_connection = null) {
  ["mysql_connection" => $mysql_connection, "created" => $mysql_connection_created, "success" => $mysql_connection_created_success] = maybe_create_mysql_connection($mysql_connection);
  if (!$mysql_connection_created_success) {
-  return array("order_items" => array(), "status" => 1);
+  return array("orders" => array(), "status" => 1);
  }
 
  $orders_result = get_profile_orders($account_uuid, $mysql_connection);

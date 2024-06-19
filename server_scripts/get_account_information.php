@@ -16,7 +16,7 @@ function get_account_information($account_uuid, $mysql_connection = null) {
  }
 
  $mysql_result_row = $mysql_result->fetch_row();
- $account_information =  new account_information($mysql_result_row[1], $mysql_result_row[2], $mysql_result_row[3], $mysql_result_row[4], $mysql_result_row[5], $mysql_result_row[6], "");
+ $account_information =  new account_information($mysql_result_row[1], $mysql_result_row[2], $mysql_result_row[3], $mysql_result_row[4], $mysql_result_row[5], $mysql_result_row[6]);
  if (file_exists("$_SERVER[DOCUMENT_ROOT]/db/profiles/$account_uuid/profile.png")) {
   $account_information->profile_url = "/db/profiles/$account_uuid/profile.png";
  }

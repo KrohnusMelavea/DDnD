@@ -1,4 +1,4 @@
-.order-list-item {
+.order-info {
  display: grid;
 
  height: 128px;
@@ -10,7 +10,11 @@
 
  grid-template-columns: repeat(5, 20%);
 
+ grid-gap: 15px 0px;
+
  background-color: #777777;
+
+ margin-bottom: 25px;
 }
 .order-card {
  display: grid;

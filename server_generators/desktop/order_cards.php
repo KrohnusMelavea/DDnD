@@ -1,6 +1,8 @@
 <?php
 
-$order_cards_template = file_get_contents("$_SERVER[DOCUMENT]/templates/order_cards.html");
+require_once("server_generators/desktop/order_card.php");
+
+$order_cards_template = file_get_contents("$_SERVER[DOCUMENT_ROOT]/templates/order_cards.html");
 function generate_order_cards($order_items) {
  global $order_cards_template;
 
