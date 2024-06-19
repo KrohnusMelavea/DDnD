@@ -12,7 +12,6 @@ function get_cart_item_count($account_uuid, $mysql_connection = null) {
 
  ["mysql_connection" => $mysql_connection, "created" => $mysql_connection_created, "success" => $mysql_connection_created_success] = maybe_create_mysql_connection($mysql_connection);
  if (!$mysql_connection_created_success) {
-  debug_log("bruh");
   return array("cart_item_count" => 0, "status" => 1);
  }
 

@@ -1,0 +1,80 @@
+.order-list-item {
+ display: grid;
+
+ height: 128px;
+ background-color: #dddddd;
+}
+
+.order-cards {
+ display: grid;
+
+ grid-template-columns: repeat(5, 20%);
+
+ background-color: #777777;
+}
+.order-card {
+ display: grid;
+
+ height: 256px;
+
+ background-color: #000000;
+
+ grid-template-columns: repeat(2, 50%);
+ grid-template-rows: 178px 25px 25px 25px;
+
+ grid-gap: 1px;
+}
+.order-card-image {
+ display: flex;
+
+ width: 99.2%;
+
+ justify-content: center;
+
+ grid-column: 1 / span 2;
+ grid-row: 1;
+
+ background-color: #888888;
+}
+.order-card-picture {
+ height: 100%;
+}
+
+.order-card-title {
+ grid-column: 1 / span 2;
+ grid-row: 2;
+
+ width: 99.2%;
+
+ text-align: center;
+
+ background-color: #888888;
+}
+.order-card-price {
+ grid-column: 1;
+ grid-row: 3;
+ 
+ text-align: center;
+
+ background-color: #888888;
+}
+.order-card-quantity {
+ grid-column: 2;
+ grid-row: 3;
+
+ width: 98.4%;
+
+ text-align: center;
+
+ background-color: #888888;
+}
+.order-card-price-total {
+ grid-column: 1 / span 2;
+ grid-row: 4;
+
+ width: 99.2%;
+
+ text-align: center;
+
+ background-color: #888888;
+}
